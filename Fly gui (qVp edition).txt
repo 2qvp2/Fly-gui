@@ -1,4 +1,4 @@
-local main = Instance.new("ScreenGui")
+Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local up = Instance.new("TextButton")
 local down = Instance.new("TextButton")
@@ -10,7 +10,6 @@ local mine = Instance.new("TextButton")
 local closebutton = Instance.new("TextButton")
 local mini = Instance.new("TextButton")
 local mini2 = Instance.new("TextButton")
-local colorChangeButton = Instance.new("TextButton")
 
 main.Name = "main"
 main.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -21,7 +20,7 @@ Frame.Parent = main
 Frame.BackgroundColor3 = Color3.fromRGB(65, 105, 225)
 Frame.BorderColor3 = Color3.fromRGB(103, 221, 213)
 Frame.Position = UDim2.new(0.100320168, 0, 0.379746825, 0)
-Frame.Size = UDim2.new(0, 190, 0, 92)
+Frame.Size = UDim2.new(0, 190, 0, 57)
 
 up.Name = "up"
 up.Parent = Frame
@@ -35,7 +34,7 @@ up.TextSize = 14.000
 down.Name = "down"
 down.Parent = Frame
 down.BackgroundColor3 = Color3.fromRGB(65, 105, 225)
-down.Position = UDim2.new(0, 0, 0.305434793, 0)
+down.Position = UDim2.new(0, 0, 0.491228074, 0)
 down.Size = UDim2.new(0, 44, 0, 28)
 down.Font = Enum.Font.SourceSans
 down.Text = "DOWN"
@@ -45,22 +44,12 @@ down.TextSize = 14.000
 onof.Name = "onof"
 onof.Parent = Frame
 onof.BackgroundColor3 = Color3.fromRGB(65, 105, 225)
-onof.Position = UDim2.new(0.702823281, 0, 0.305434793, 0)
+onof.Position = UDim2.new(0.702823281, 0, 0.491228074, 0)
 onof.Size = UDim2.new(0, 56, 0, 28)
 onof.Font = Enum.Font.SourceSans
-onof.Text = "FLY"
+onof.Text = "fly"
 onof.TextColor3 = Color3.fromRGB(0, 0, 0)
 onof.TextSize = 14.000
-
-colorChangeButton.Name = "colorChangeButton"
-colorChangeButton.Parent = Frame
-colorChangeButton.BackgroundColor3 = Color3.fromRGB(65, 105, 225)
-colorChangeButton.Position = UDim2.new(0.5, -60, 0.610869586, 0)
-colorChangeButton.Size = UDim2.new(0, 120, 0, 28)
-colorChangeButton.Font = Enum.Font.SourceSans
-colorChangeButton.Text = "Change Color (Blue)"
-colorChangeButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-colorChangeButton.TextSize = 14.000
 
 TextLabel.Parent = Frame
 TextLabel.BackgroundColor3 = Color3.fromRGB(65, 105, 225)
@@ -88,7 +77,7 @@ plus.TextWrapped = true
 speed.Name = "speed"
 speed.Parent = Frame
 speed.BackgroundColor3 = Color3.fromRGB(65, 105, 225)
-speed.Position = UDim2.new(0.468421042, 0, 0.305434793, 0)
+speed.Position = UDim2.new(0.468421042, 0, 0.491228074, 0)
 speed.Size = UDim2.new(0, 44, 0, 28)
 speed.Font = Enum.Font.SourceSans
 speed.Text = "1"
@@ -100,8 +89,8 @@ speed.TextWrapped = true
 mine.Name = "mine"
 mine.Parent = Frame
 mine.BackgroundColor3 = Color3.fromRGB(65, 105, 225)
-mine.Position = UDim2.new(0.231578946, 0, 0.610869586, 0)
-mine.Size = UDim2.new(0, 45, 0, 28)
+mine.Position = UDim2.new(0.231578946, 0, 0.491228074, 0)
+mine.Size = UDim2.new(0, 45, 0, 29)
 mine.Font = Enum.Font.SourceSans
 mine.Text = "-"
 mine.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -110,40 +99,36 @@ mine.TextSize = 14.000
 mine.TextWrapped = true
 
 closebutton.Name = "Close"
-closebutton.Parent = Frame
+closebutton.Parent = main.Frame
 closebutton.BackgroundColor3 = Color3.fromRGB(65, 105, 225)
-closebutton.Font = Enum.Font.SourceSans
+closebutton.Font = "SourceSans"
 closebutton.Size = UDim2.new(0, 45, 0, 28)
 closebutton.Text = "X"
 closebutton.TextSize = 30
-closebutton.Position =  UDim2.new(0, 0, -1, 28)
+closebutton.Position =  UDim2.new(0, 0, -1, 27)
 
 mini.Name = "minimize"
-mini.Parent = Frame
+mini.Parent = main.Frame
 mini.BackgroundColor3 = Color3.fromRGB(33, 82, 4)
 mini.Font = "SourceSans"
 mini.Size = UDim2.new(0, 45, 0, 28)
 mini.Text = "-"
 mini.TextSize = 40
-mini.Position = UDim2.new(0, 44, -1, 28)
+mini.Position = UDim2.new(0, 44, -1, 27)
 
 mini2.Name = "minimize2"
-mini2.Parent = Frame
+mini2.Parent = main.Frame
 mini2.BackgroundColor3 = Color3.fromRGB(33, 82, 4)
 mini2.Font = "SourceSans"
 mini2.Size = UDim2.new(0, 45, 0, 28)
 mini2.Text = "+"
 mini2.TextSize = 40
-mini2.Position = UDim2.new(0, 44, -1, 58)
+mini2.Position = UDim2.new(0, 44, -1, 57)
 mini2.Visible = false
 
 speeds = 1
 
 local speaker = game:GetService("Players").LocalPlayer
-
-local function changeColor()
-    local colorOptions
-
 
 local chr = game.Players.LocalPlayer.Character
 local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
@@ -494,3 +479,4 @@ mini2.MouseButton1Click:Connect(function()
 	main.Frame.BackgroundTransparency = 0 
 	closebutton.Position =  UDim2.new(0, 0, -1, 27)
 end)
+
